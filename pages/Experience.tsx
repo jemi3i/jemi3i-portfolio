@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
 import { EXPERIENCES, LANGUAGES, PROFILE } from '../constants';
-import { Link } from 'react-router-dom';
 
 const Experience: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'engineering' | 'entrepreneurship' | 'volunteering' | 'education'>('all');
@@ -23,7 +22,7 @@ const Experience: React.FC = () => {
                 TIMELINE // VERIFIED_CHRONOLOGY
               </Text>
             </div>
-            <Text variant="hero" className="text-5xl md:text-8xl uppercase leading-none font-display">
+            <Text as="h1" variant="hero" className="text-5xl md:text-8xl uppercase leading-none font-display">
               TRACK <span className="text-brand-red italic">RECORD</span>
             </Text>
             <p className="font-sans text-base md:text-lg text-brand-white/70 max-w-2xl mt-4 leading-relaxed font-light">
@@ -37,6 +36,7 @@ const Experience: React.FC = () => {
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
+                aria-pressed={filter === tab}
                 className={`font-mono text-[10px] md:text-xs uppercase tracking-widest px-3 py-1.5 transition-all ${
                   filter === tab 
                     ? 'bg-brand-red text-white font-bold' 
@@ -142,11 +142,9 @@ const Experience: React.FC = () => {
           <p className="font-sans text-sm text-brand-white/70 mb-6 font-light">
             Academic transcripts, internship certificates, or volunteering verification can be transmitted directly upon request.
           </p>
-          <Link to="/contact">
-            <Button variant="primary">
-              Contact Marwen Jemai →
-            </Button>
-          </Link>
+          <Button to="/contact" variant="primary">
+            Contact Marwen Jemai →
+          </Button>
         </div>
       </div>
     </div>

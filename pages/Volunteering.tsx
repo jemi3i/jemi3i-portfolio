@@ -3,7 +3,6 @@ import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
 import Image from '../components/atoms/Image';
 import { VOLUNTEERING_DATA, ESC_MOTIVATIONS, PROFILE } from '../constants';
-import { Link } from 'react-router-dom';
 
 const Volunteering: React.FC = () => {
   return (
@@ -17,7 +16,7 @@ const Volunteering: React.FC = () => {
           </Text>
         </div>
 
-        <Text variant="hero" className="text-5xl md:text-8xl mb-8 uppercase leading-none font-display">
+        <Text as="h1" variant="hero" className="text-5xl md:text-8xl mb-8 uppercase leading-none font-display">
           SOLIDARITY <br />
           <span className="text-brand-red italic">THROUGH ACTION.</span>
         </Text>
@@ -204,11 +203,9 @@ const Volunteering: React.FC = () => {
                 Available for youth sports projects, community inclusion, and digital creativity workshops across Europe.
               </p>
             </div>
-            <Link to="/contact">
-              <Button variant="primary" className="whitespace-nowrap">
-                Submit ESC Opportunity →
-              </Button>
-            </Link>
+            <Button to="/contact" variant="primary" className="whitespace-nowrap">
+              Submit ESC Opportunity →
+            </Button>
           </div>
         </div>
       </section>

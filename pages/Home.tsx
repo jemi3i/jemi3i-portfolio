@@ -53,11 +53,9 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="mt-12">
-            <Link to="/about">
-              <Button variant="ghost" className="text-lg italic border-b border-brand-red pb-2 text-brand-white">
-                Read Full Academic & Personal Biography →
-              </Button>
-            </Link>
+            <Button to="/about" variant="ghost" className="text-lg italic border-b border-brand-red pb-2 text-brand-white">
+              Read Full Academic & Personal Biography →
+            </Button>
           </div>
         </div>
       </section>
@@ -83,6 +81,7 @@ const Home: React.FC = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveFilter(tab)}
+                  aria-pressed={activeFilter === tab}
                   className={`font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 transition-all ${
                     activeFilter === tab 
                       ? 'bg-brand-red text-white font-bold' 
@@ -93,11 +92,9 @@ const Home: React.FC = () => {
                 </button>
               ))}
             </div>
-            <Link to="/projects">
-              <Button variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white py-3 text-[10px]">
-                View All Specs
-              </Button>
-            </Link>
+            <Button to="/projects" variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white py-3 text-[10px]">
+              View All Specs
+            </Button>
           </div>
         </div>
 
@@ -122,11 +119,9 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            <Link to="/volunteering">
-              <Button variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white py-3 text-[10px]">
-                Full Impact Dossier
-              </Button>
-            </Link>
+            <Button to="/volunteering" variant="outline" className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white py-3 text-[10px]">
+              Full Impact Dossier
+            </Button>
           </div>
 
           {/* Cohesive Interactive Exhibition Card — Identical architectural pattern to Exhibition 002 */}
@@ -375,16 +370,16 @@ const Home: React.FC = () => {
             Whether you represent an innovative engineering company seeking a PFE intern or an ESC organization building European solidarity, let's connect.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/contact">
-              <Button variant="primary" className="text-sm px-10 py-5">
+            <span>
+              <Button to="/contact" variant="primary" className="text-sm px-10 py-5">
                 Transmit PFE / ESC Proposal →
               </Button>
-            </Link>
-            <a href={`mailto:${PROFILE.email}`}>
-              <Button variant="outline" className="text-sm px-10 py-5">
+            </span>
+            <span>
+              <Button href={`mailto:${PROFILE.email}`} variant="outline" className="text-sm px-10 py-5">
                 Direct Email: {PROFILE.email}
               </Button>
-            </a>
+            </span>
           </div>
         </div>
       </section>

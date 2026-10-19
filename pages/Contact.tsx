@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
-import FormField from '../components/molecules/FormField';
 import { PROFILE } from '../constants';
 
 const Contact: React.FC = () => {
@@ -9,7 +8,17 @@ const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [organization, setOrganization] = useState('');
   const [message, setMessage] = useState('');
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copying' | 'success' | 'error'>('idle');
+  const copyAttempt = useRef(0);
+  const resetCopyTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => {
+    setCopyStatus('idle');
+    return () => {
+      copyAttempt.current += 1;
+      clearTimeout(resetCopyTimer.current);
+    };
+  }, [inquiryType, name, organization, message]);
 
   const subject = inquiryType === 'pfe'
     ? `[PFE Internship Proposal] from ${organization || name || 'Recruiter'}`
@@ -21,11 +30,26 @@ const Contact: React.FC = () => {
 
   const mailtoUrl = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`To: ${PROFILE.email}\nSubject: ${subject}\n\n${mailBody}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 3000);
+  const handleCopy = async () => {
+    const attempt = ++copyAttempt.current;
+    clearTimeout(resetCopyTimer.current);
+    setCopyStatus('copying');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(`To: ${PROFILE.email}\nSubject: ${subject}\n\n${mailBody}`);
+      if (attempt !== copyAttempt.current) return;
+      setCopyStatus('success');
+      resetCopyTimer.current = setTimeout(() => setCopyStatus('idle'), 3000);
+    } catch {
+      if (attempt === copyAttempt.current) setCopyStatus('error');
+    }
   };
+
+  const copyFeedback = copyStatus === 'success'
+    ? 'Formatted transmission copied to clipboard.'
+    : copyStatus === 'error'
+      ? 'Copy failed. Please retry or use Direct Email.'
+      : '';
 
   return (
     <div className="bg-brand-black pt-36 pb-24 px-6 md:px-12 min-h-screen text-brand-white">
@@ -39,7 +63,7 @@ const Contact: React.FC = () => {
                 TRANSMISSION_PORTAL // CONTACT
               </Text>
             </div>
-            <Text variant="hero" className="text-5xl md:text-7xl mb-6 uppercase leading-none font-display">
+            <Text as="h1" variant="hero" className="text-5xl md:text-7xl mb-6 uppercase leading-none font-display">
               INITIATE <br />
               <span className="text-brand-red italic">CONTACT.</span>
             </Text>
@@ -112,6 +136,7 @@ const Contact: React.FC = () => {
             <button
               type="button"
               onClick={() => setInquiryType('pfe')}
+              aria-pressed={inquiryType === 'pfe'}
               className={`p-4 border font-mono text-xs uppercase tracking-widest text-left transition-all ${
                 inquiryType === 'pfe'
                   ? 'border-brand-red bg-brand-red/10 text-white font-bold'
@@ -125,6 +150,7 @@ const Contact: React.FC = () => {
             <button
               type="button"
               onClick={() => setInquiryType('esc')}
+              aria-pressed={inquiryType === 'esc'}
               className={`p-4 border font-mono text-xs uppercase tracking-widest text-left transition-all ${
                 inquiryType === 'esc'
                   ? 'border-brand-red bg-brand-red/10 text-white font-bold'
@@ -186,22 +212,21 @@ const Contact: React.FC = () => {
 
             {/* Transmission Action Buttons */}
             <div className="pt-6 space-y-4">
-              <a 
-                href={mailtoUrl}
-                className="block w-full"
-              >
-                <Button fullWidth variant="primary" className="py-4 text-xs font-mono">
-                  Transmit via Email Client →
-                </Button>
-              </a>
+              <Button href={mailtoUrl} fullWidth variant="primary" className="py-4 text-xs font-mono">
+                Transmit via Email Client →
+              </Button>
 
               <div className="flex justify-between items-center pt-2">
                 <button
                   type="button"
                   onClick={handleCopy}
+                  disabled={copyStatus === 'copying'}
+                  aria-busy={copyStatus === 'copying'}
                   className="font-mono text-[10px] text-white/50 hover:text-brand-red underline tracking-widest uppercase transition-colors"
                 >
-                  {copied ? '✓ Transmission Copied to Clipboard!' : 'Copy Formatted Text to Clipboard'}
+                  {copyStatus === 'success' ? '✓ Transmission Copied to Clipboard!'
+                    : copyStatus === 'error' ? 'Copy failed — retry or use Direct Email'
+                    : 'Copy Formatted Text to Clipboard'}
                 </button>
 
                 <span className="font-mono text-[9px] text-white/30 uppercase">
@@ -210,6 +235,10 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <span role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+            {copyFeedback}
+          </span>
 
           {/* Brutalist Aesthetic Corner Brackets */}
           <div className="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-brand-red pointer-events-none" />
