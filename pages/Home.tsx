@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             <div>
               <Text variant="mono" className="text-brand-red mb-2">03 // HUMAN SOLIDARITY</Text>
               <p className="font-sans text-sm text-brand-white/70 leading-relaxed">
-                One year coaching kickboxing beginners, children, and elders, fostering inclusive community growth.
+                Kickboxing training and volunteer coaching assistance at Champion Boxing Club, Ariana, from November 2024 to March 2026.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
                 COMMUNITY <span className="text-brand-red italic">IMPACT</span>
               </Text>
               <p className="font-sans text-sm md:text-base text-brand-white/70 mt-4 max-w-xl font-light">
-                One year of grassroots athletic mentorship, youth empowerment, and intergenerational inclusion in Tunis. Verified and ready for ESC solidarity missions.
+                Personal kickboxing training and volunteer coaching assistance at Champion Boxing Club in Ariana, November 2024 — March 2026.
               </p>
             </div>
 
@@ -137,10 +137,10 @@ const Home: React.FC = () => {
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[9px] px-2.5 py-1 bg-white/5 border border-white/10 text-white/60 uppercase">
-                  1 YEAR COMPLETED
+                  NOV 2024 — MAR 2026
                 </span>
                 <span className="font-mono text-[9px] px-2.5 py-1 bg-brand-red/10 border border-brand-red/40 text-brand-red uppercase">
-                  ESC_VOLUNTEERING_READY
+                  INTERESTED IN ESC VOLUNTEERING
                 </span>
               </div>
             </div>
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
                 >
                   <img 
                     src={VOLUNTEERING_DATA.image} 
-                    alt={VOLUNTEERING_DATA.title} 
+                    alt="Illustrative boxing gloves — not a photograph of Champion Boxing Club or my volunteering"
                     className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" 
                     loading="lazy"
                   />
@@ -164,13 +164,13 @@ const Home: React.FC = () => {
 
                   <div className="absolute top-4 left-4 pointer-events-none">
                     <span className="font-mono text-[8px] md:text-[9px] bg-brand-black/90 px-3 py-1.5 border border-white/15 text-white/70 uppercase tracking-widest backdrop-blur-md">
-                      TUNIS, TUNISIA // ATHLETIC MENTORSHIP
+                      ILLUSTRATIVE IMAGE // UNSPLASH
                     </span>
                   </div>
 
                   <div className="absolute bottom-6 left-6 right-6 pointer-events-none flex justify-between items-end">
                     <span className="font-mono text-xs text-brand-red font-bold uppercase tracking-widest bg-brand-black/90 px-3 py-1 border border-brand-red/40">
-                      COMMUNITY_SOLIDARITY_VERIFIED
+                      TRAINING + VOLUNTEERING
                     </span>
                     <span className="font-mono text-xs text-brand-white bg-brand-black/90 px-3 py-1 border border-white/20 group-hover:border-brand-red transition-colors">
                       EXPLORE DOSSIER →
@@ -199,14 +199,14 @@ const Home: React.FC = () => {
                     <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest block mb-1">
                       COMMUNITY_ENGAGEMENT_PILLARS
                     </span>
-                    
+
                     <div className="p-3 border border-white/10 bg-brand-gray/40">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="w-2 h-2 rounded-full bg-brand-red" />
-                        <span className="font-mono text-xs font-bold uppercase text-brand-white">YOUTH EMPOWERMENT</span>
+                        <span className="font-mono text-xs font-bold uppercase text-brand-white">YOUTH ENGAGEMENT</span>
                       </div>
                       <p className="font-sans text-xs text-brand-white/60">
-                        Guided adolescents in cultivating discipline, sportsmanship, and self-confidence through athletic training.
+                        Assisted children during training exercises and helped them follow the coach’s instructions.
                       </p>
                     </div>
 
@@ -216,7 +216,7 @@ const Home: React.FC = () => {
                         <span className="font-mono text-xs font-bold uppercase text-brand-white">INTERGENERATIONAL INCLUSION</span>
                       </div>
                       <p className="font-sans text-xs text-brand-white/60">
-                        Adapted mobility and conditioning routines for older adults to maintain cardiovascular vitality and community connection.
+                        Assisted older adults during training activities alongside the head coach.
                       </p>
                     </div>
 
@@ -226,7 +226,7 @@ const Home: React.FC = () => {
                         <span className="font-mono text-xs font-bold uppercase text-brand-white">BEGINNER ONBOARDING & ESC</span>
                       </div>
                       <p className="font-sans text-xs text-brand-white/60">
-                        Patient peer guidance breaking down entry barriers for newcomers in an inclusive, non-intimidating setting.
+                        Explained basic techniques and helped beginners correct their posture and movements.
                       </p>
                     </div>
                   </div>
@@ -261,10 +261,10 @@ const Home: React.FC = () => {
           />
           {/* Base darkening overlay */}
           <div className="absolute inset-0 bg-brand-black/55 transition-colors duration-700 group-hover:bg-brand-black/45" />
-          
+
           {/* Localized dark radial gradient behind the typography to ensure high contrast without crushing photographic presence */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(2,2,2,0.92)_0%,rgba(2,2,2,0.70)_55%,rgba(2,2,2,0.85)_100%)]" />
-          
+
           {/* Subtle vertical gradients to seamlessly feather into adjacent sections */}
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-black via-brand-black/60 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent" />
@@ -311,7 +311,7 @@ const Home: React.FC = () => {
 
           {/* Contextual Narrative Support */}
           <p className="font-sans text-sm md:text-lg text-brand-white/80 max-w-2xl mx-auto mt-10 md:mt-16 leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Ready to integrate high-velocity software engineering teams (PFE) or lead grassroots community projects (ESC).
+            Seeking a PFE engineering internship and interested in contributing to ESC community projects.
           </p>
         </div>
 

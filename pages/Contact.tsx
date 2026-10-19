@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
+import { useSearchParams } from 'react-router-dom';
 import { PROFILE } from '../constants';
 
 const Contact: React.FC = () => {
-  const [inquiryType, setInquiryType] = useState<'pfe' | 'esc'>('pfe');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const inquiryType = searchParams.get('inquiry') === 'esc' ? 'esc' : 'pfe';
+  const setInquiryType = (type: 'pfe' | 'esc') => {
+    const next = new URLSearchParams(searchParams);
+    if (type === 'esc') next.set('inquiry', 'esc');
+    else next.delete('inquiry');
+    setSearchParams(next, { replace: true });
+  };
   const [name, setName] = useState('');
   const [organization, setOrganization] = useState('');
   const [message, setMessage] = useState('');

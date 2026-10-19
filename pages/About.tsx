@@ -35,7 +35,7 @@ const About: React.FC = () => {
                 From building database features and student management systems during my internship at <span className="text-brand-white font-medium">Zmenuvis</span> to founding and directing an independent clothing brand from early 2024 to early 2025, I combine technical discipline with creative entrepreneurial autonomy.
               </p>
               <p>
-                Simultaneously, my one-year dedication to assisting a community kickboxing coach taught me that real leadership begins with listening, supporting beginners, and creating safe, welcoming spaces for children and older adults alike.
+                From November 2024 to March 2026, I combined kickboxing training with volunteer coaching assistance at Champion Boxing Club in Ariana. I helped beginners, supported children and older adults during exercises, prepared equipment and helped organize groups.
               </p>
             </div>
 
@@ -52,10 +52,10 @@ const About: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="border border-white/10 overflow-hidden bg-brand-gray relative group">
               <Image 
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop&grayscale=true" 
-                alt="Marwen Jemai Professional Overview" 
+                src="/images/marwen-jemai-portrait.webp"
+                alt="Portrait of Marwen Jemai"
                 aspectRatio="aspect-[4/5]"
-                className="filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                className="grayscale-[85%] brightness-95 contrast-[1.05] transition-[filter,transform] duration-700 ease-out [&_img]:object-top [&_img]:!grayscale-0 [@media(hover:hover)_and_(pointer:fine)]:group-hover:grayscale-[35%] [@media(hover:hover)_and_(pointer:fine)]:group-hover:brightness-105 [@media(hover:hover)_and_(pointer:fine)]:group-hover:contrast-[1.1] [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-105 motion-reduce:transition-none motion-reduce:!transform-none motion-reduce:[&_img]:!transform-none"
               />
               <div className="absolute inset-0 bg-brand-red/10 mix-blend-multiply pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 bg-brand-black/90 p-4 border border-white/10 backdrop-blur-md">
@@ -153,7 +153,7 @@ const About: React.FC = () => {
             RIGOR IN CODE. <br />EMPATHY IN ACTION.
           </Text>
           <p className="font-sans text-lg md:text-xl text-black/90 max-w-2xl mx-auto font-medium">
-            "Whether optimizing query performance for student academic data or adjusting pads for a 60-year-old beginner in the gym, the standard is unwavering: patience, clarity, and respect."
+            "Patience, clarity, and respect guide how I approach both software projects and practical assistance during kickboxing training."
           </p>
         </div>
       </section>

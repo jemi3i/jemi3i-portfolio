@@ -140,7 +140,7 @@ const Experience: React.FC = () => {
             Need Full Resume or Verification Documents?
           </h4>
           <p className="font-sans text-sm text-brand-white/70 mb-6 font-light">
-            Academic transcripts, internship certificates, or volunteering verification can be transmitted directly upon request.
+            Contact me about academic transcripts or internship certificates, or to discuss my volunteering experience.
           </p>
           <Button to="/contact" variant="primary">
             Contact Marwen Jemai →
