@@ -175,7 +175,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
                   COMMUNITY & VOLUNTEERING
                 </span>
                 <p className="font-sans text-xs text-brand-white/70 group-hover:text-black/85 mt-1 font-light leading-relaxed">
-                  1-year youth & beginner kickboxing coaching & solidarity actions
+                  Champion Boxing Club // training & volunteer assistance
                 </p>
               </div>
             </Link>

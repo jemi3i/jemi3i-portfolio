@@ -2,7 +2,7 @@ import React from 'react';
 import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
 import Image from '../components/atoms/Image';
-import { VOLUNTEERING_DATA, ESC_MOTIVATIONS, PROFILE } from '../constants';
+import { VOLUNTEERING_DATA, ESC_MOTIVATIONS } from '../constants';
 
 const Volunteering: React.FC = () => {
   return (
@@ -22,13 +22,13 @@ const Volunteering: React.FC = () => {
         </Text>
 
         <p className="font-sans text-lg md:text-2xl text-brand-white/80 max-w-3xl leading-relaxed font-light mb-10">
-          One year of dedicated grassroots mentorship assisting a community kickboxing coach: breaking barriers for beginners, empowering children, and keeping older adults active.
+          {VOLUNTEERING_DATA.description}
         </p>
 
         {/* Key ESC Profile Tags */}
         <div className="flex flex-wrap gap-3 border-y border-white/10 py-6">
           <span className="font-mono text-xs px-3 py-1.5 bg-brand-red/10 border border-brand-red text-brand-red">
-            EUROPEAN SOLIDARITY CORPS READY
+            INTERESTED IN ESC VOLUNTEERING
           </span>
           <span className="font-mono text-xs px-3 py-1.5 bg-white/5 border border-white/10 text-white/80">
             YOUTH ENGAGEMENT
@@ -49,16 +49,16 @@ const Volunteering: React.FC = () => {
             <div className="border border-white/10 relative overflow-hidden bg-brand-gray group">
               <Image 
                 src={VOLUNTEERING_DATA.image} 
-                alt="Community Kickboxing Mentorship" 
+                alt="Illustrative boxing gloves — not a photograph of Champion Boxing Club or my volunteering"
                 aspectRatio="aspect-[4/3] md:aspect-[16/11]"
                 className="filter grayscale contrast-125"
               />
               <div className="absolute top-4 left-4 bg-black/90 px-3 py-1.5 border border-white/10 font-mono text-[9px] text-brand-red">
-                LOCATION: TUNIS, TUNISIA // 1 YEAR DEDICATION
+                ILLUSTRATIVE IMAGE // UNSPLASH
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-black/90 p-2.5 border border-white/10 backdrop-blur-md">
-                <span className="font-mono text-[8px] text-white/50 uppercase tracking-widest block">
-                  COMMUNITY MENTORSHIP // KICKBOXING COACHING ASSISTANT
+                <span className="font-mono text-[10px] text-white/75 uppercase tracking-widest block">
+                  BOXING EQUIPMENT // NOT AN ACTIVITY PHOTOGRAPH
                 </span>
               </div>
             </div>
@@ -67,54 +67,50 @@ const Volunteering: React.FC = () => {
             <div className="p-6 border border-dashed border-white/20 bg-brand-gray/20 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="font-mono text-[9px] text-brand-red uppercase tracking-widest">
-                  COMMUNITY PHOTO ARCHIVE
+                  COMMUNITY EXPERIENCE
                 </span>
-                <span className="font-mono text-[9px] text-white/40">
+                <span className="font-mono text-[10px] text-white/70">
                   MARWEN JEMAI
                 </span>
               </div>
               <p className="font-sans text-xs text-brand-white/60 leading-relaxed font-light">
-                Documented training sessions with youth and older adult participants in Tunis. Personal field photos and activity logs can be shared directly with ESC coordinators.
+                Alongside my own kickboxing training, I volunteered to assist the head coach with beginner guidance, group activities and training preparation, supporting participants of different ages.
               </p>
             </div>
 
             <div className="p-6 bg-brand-gray border border-white/10 space-y-4">
-              <Text variant="mono" className="text-brand-red text-xs">
-                VOLUNTEER_CREDENTIALS
-              </Text>
-              <div className="space-y-2 text-xs font-mono">
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-white/40">ROLE</span>
-                  <span className="text-brand-white">{VOLUNTEERING_DATA.role}</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-white/40">DURATION</span>
-                  <span className="text-brand-white">{VOLUNTEERING_DATA.period}</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-white/40">CORE VALUES</span>
-                  <span className="text-brand-white">Respect, Inclusion, Non-Violence</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-white/40">ESC READINESS</span>
-                  <span className="text-brand-red">Active Candidate (2026/2027)</span>
-                </div>
-              </div>
+              <Text variant="mono" className="text-brand-red text-xs">EXPERIENCE_DETAILS</Text>
+              <h2 className="font-display text-xl font-bold uppercase">{VOLUNTEERING_DATA.title}</h2>
+              <dl className="space-y-3 text-xs font-mono">
+                {[
+                  ['Organization', VOLUNTEERING_DATA.title],
+                  ['Role', VOLUNTEERING_DATA.role],
+                  ['Period', VOLUNTEERING_DATA.period],
+                  ['Location', VOLUNTEERING_DATA.location],
+                  ['Frequency', '5 sessions/week (training + volunteering)']
+                ].map(([label, value]) => (
+                  <div key={label} className="grid grid-cols-1 sm:grid-cols-[6rem_minmax(0,1fr)] gap-1 sm:gap-3 border-b border-white/10 pb-2">
+                    <dt className="text-brand-white/70 uppercase">{label}</dt>
+                    <dd className="min-w-0 break-words text-brand-white">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="font-sans text-xs text-brand-white/70 leading-relaxed">These five weekly sessions combined my personal training and volunteering assistance; they were not exclusively volunteer work.</p>
             </div>
           </div>
 
           <div className="lg:col-span-6 space-y-8">
             <div>
               <Text variant="label" className="text-brand-red mb-2">FIELD_NARRATIVE</Text>
-              <h3 className="font-display text-3xl md:text-4xl text-brand-white uppercase font-black mb-4">
+              <h2 className="font-display text-3xl md:text-4xl text-brand-white uppercase font-black mb-4">
                 The Community Kickboxing Experience
-              </h3>
+              </h2>
               <div className="font-sans text-base text-brand-white/80 leading-relaxed font-light space-y-4">
                 <p>
-                  {VOLUNTEERING_DATA.description}
+                  I assisted the head coach during training, explained basic movements to beginners and helped participants correct their posture and techniques. I also supported children and older adults during exercises.
                 </p>
                 <p>
-                  Martial arts training in a neighborhood setting is far more than physical exercise. For children, it is a safe outlet to cultivate discipline, respect for others, and self-confidence. For older adults, it provides vital functional movement, joint mobility, and social connection.
+                  Alongside my own kickboxing practice, I prepared training equipment and helped organize groups. My attendance combined personal training with practical assistance during sessions.
                 </p>
               </div>
             </div>
@@ -125,9 +121,9 @@ const Volunteering: React.FC = () => {
                 <div key={i} className="p-6 border border-white/10 bg-brand-gray/30 hover:border-brand-red/50 transition-colors">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-brand-red font-mono text-sm font-bold">0{i+1} //</span>
-                    <h4 className="font-display font-bold text-lg text-brand-white uppercase">
+                    <h3 className="font-display font-bold text-lg text-brand-white uppercase">
                       {pillar.title}
-                    </h4>
+                    </h3>
                   </div>
                   <p className="font-sans text-sm text-brand-white/70 leading-relaxed font-light pl-8">
                     {pillar.description}
@@ -146,13 +142,13 @@ const Volunteering: React.FC = () => {
             <span className="font-mono text-xs text-brand-red uppercase tracking-widest block mb-2">
               SYNERGY // TECH & SOLIDARITY
             </span>
-            <h3 className="font-display text-3xl md:text-4xl uppercase font-black text-brand-white leading-tight">
+            <h2 className="font-display text-3xl md:text-4xl uppercase font-black text-brand-white leading-tight">
               Digital Creativity in the Community
-            </h3>
+            </h2>
           </div>
           <div className="md:col-span-8 font-sans text-base text-brand-white/70 leading-relaxed font-light space-y-3">
             <p>
-              As a Web and Internet Technologies student with a background in creative design, I bring a unique dual capacity to volunteering missions. Beyond coaching on the mat, I can help European youth organizations build clean event schedules, design digital media, and facilitate creative workshops that make technology accessible to all backgrounds.
+              My software engineering studies and digital skills are a separate part of my background. For future ESC projects, I am interested in contributing technical and creative support and learning to help with digital activities in a host team. These are future volunteering interests, not activities I delivered at Champion Boxing Club.
             </p>
           </div>
         </div>
@@ -163,29 +159,29 @@ const Volunteering: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
             <Text variant="label" className="text-brand-red mb-2">ESC_ORGANIZATION_ALIGNMENT</Text>
-            <h3 className="font-display text-3xl md:text-5xl uppercase font-black tracking-tight mb-4">
-              European Solidarity Corps Readiness
-            </h3>
+            <h2 className="font-display text-3xl md:text-5xl uppercase font-black tracking-tight mb-4">
+              Interested in ESC Volunteering
+            </h2>
             <p className="font-sans text-base text-brand-white/70 leading-relaxed font-light">
-              How my practical experience in sports coaching, multilingual communication, and digital creativity directly serves European host projects:
+              I am interested in youth engagement, community inclusion, non-formal education and sports participation. I would like to contribute practical and digital support while learning alongside an intercultural host team.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {ESC_MOTIVATIONS.map((item, idx) => (
               <div key={idx} className="p-8 border border-white/10 bg-brand-black flex flex-col justify-between">
                 <div>
                   <Text variant="mono" className="text-brand-red text-xs mb-3">PILLAR_0{idx + 1}</Text>
-                  <h4 className="font-display font-bold text-xl uppercase mb-4 text-brand-white">
+                  <h3 className="font-display font-bold text-xl uppercase mb-4 text-brand-white">
                     {item.pillar}
-                  </h4>
+                  </h3>
                   <p className="font-sans text-sm text-brand-white/70 leading-relaxed font-light">
                     {item.summary}
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-white/5">
-                  <span className="font-mono text-[9px] text-brand-white/30 uppercase">
-                    ESC_PRIORITY // ACTIVE
+                  <span className="font-mono text-[10px] text-brand-white/65 uppercase">
+                    ESC_INTEREST // FUTURE CONTRIBUTION
                   </span>
                 </div>
               </div>
@@ -193,18 +189,18 @@ const Volunteering: React.FC = () => {
           </div>
 
           {/* Action Call to ESC Organizations */}
-          <div className="mt-16 p-8 border border-brand-red bg-brand-red/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="mt-16 p-8 border border-brand-red bg-brand-red/10 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6">
             <div>
               <Text variant="mono" className="text-brand-red text-xs mb-1">CALL_FOR_PARTNERSHIP</Text>
-              <h4 className="font-display font-bold text-2xl uppercase text-brand-white">
-                Looking for an enthusiastic, multilingual ESC volunteer?
-              </h4>
+              <h3 className="font-display font-bold text-2xl uppercase text-brand-white">
+                Discuss an ESC volunteering opportunity
+              </h3>
               <p className="font-sans text-sm text-brand-white/70 mt-1">
-                Available for youth sports projects, community inclusion, and digital creativity workshops across Europe.
+                Interested in youth sports, community inclusion and digital or creative support. Contact me to discuss the activities, dates and duration.
               </p>
             </div>
-            <Button to="/contact" variant="primary" className="whitespace-nowrap">
-              Submit ESC Opportunity →
+            <Button to="/contact?inquiry=esc" variant="primary" className="w-full min-w-0 whitespace-normal break-words px-4 py-4 text-[11px] tracking-widest md:w-auto md:shrink-0 md:max-w-[20rem]">
+              Discuss an ESC Opportunity →
             </Button>
           </div>
         </div>

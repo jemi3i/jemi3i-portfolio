@@ -35,7 +35,7 @@ const About: React.FC = () => {
                 From building database features and student management systems during my internship at <span className="text-brand-white font-medium">Zmenuvis</span> to founding and directing an independent clothing brand from early 2024 to early 2025, I combine technical discipline with creative entrepreneurial autonomy.
               </p>
               <p>
-                Simultaneously, my one-year dedication to assisting a community kickboxing coach taught me that real leadership begins with listening, supporting beginners, and creating safe, welcoming spaces for children and older adults alike.
+                From November 2024 to March 2026, I combined kickboxing training with volunteer coaching assistance at Champion Boxing Club in Ariana. I helped beginners, supported children and older adults during exercises, prepared equipment and helped organize groups.
               </p>
             </div>
 
@@ -153,7 +153,7 @@ const About: React.FC = () => {
             RIGOR IN CODE. <br />EMPATHY IN ACTION.
           </Text>
           <p className="font-sans text-lg md:text-xl text-black/90 max-w-2xl mx-auto font-medium">
-            "Whether optimizing query performance for student academic data or adjusting pads for a 60-year-old beginner in the gym, the standard is unwavering: patience, clarity, and respect."
+            "Patience, clarity, and respect guide how I approach both software projects and practical assistance during kickboxing training."
           </p>
         </div>
       </section>

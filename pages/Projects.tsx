@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
               Interested in youth and community initiatives?
             </p>
             <p className="font-sans text-sm text-brand-white/60 mt-1">
-              Discover one full year of community kickboxing mentorship and solidarity actions.
+              Explore my kickboxing training and volunteer coaching assistance at Champion Boxing Club, November 2024 — March 2026.
             </p>
           </div>
           <Link to="/volunteering" className="px-8 py-4 border border-white/20 hover:border-brand-red text-brand-white font-mono text-xs uppercase tracking-widest transition-all inline-block text-center">

@@ -123,36 +123,32 @@ export const PROJECTS: Project[] = [
 
 export const VOLUNTEERING_DATA: VolunteeringInitiative = {
   id: 'kickboxing-community-coaching',
-  title: 'Community Kickboxing Mentorship & Coaching Support',
-  role: 'Assistant Coach & Volunteer Mentor',
-  focus: 'Youth Engagement, Intergenerational Inclusion & Beginner Support',
-  period: '1 Year (Completed)',
-  location: 'Tunis, Tunisia',
-  demographics: [
-    'Children & Adolescents (Discipline, coordination, anti-bullying, confidence)',
-    'Older Adults (Cardiovascular health, mobility, gentle movement, social connection)',
-    'Complete Beginners (Safe orientation, stress-reduction, technique basics)'
-  ],
-  description: 'Dedicated one full year assisting the head coach during regular community kickboxing training sessions. Actively supported children, teenagers, older adults, and newcomers by breaking down technical movements, ensuring safety, and fostering a patient, inclusive sports environment.',
+  title: 'Champion Boxing Club',
+  role: 'Kickboxing Practitioner & Volunteer Coaching Assistant',
+  focus: 'Youth Engagement, Beginner Guidance & Intergenerational Inclusion',
+  period: 'Nov 2024 — Mar 2026',
+  location: 'Ariana, Tunisia',
+  demographics: ['Children', 'Older adults', 'Beginners'],
+  description: 'From November 2024 to March 2026, I combined regular kickboxing training with volunteer coaching assistance at Champion Boxing Club in Ariana, Tunisia, supporting the head coach and helping participants of different ages and experience levels.',
   corePillars: [
     {
-      title: 'Youth Engagement & Constructive Discipline',
-      description: 'Worked directly with young students to channel energy into positive physical discipline, mutual respect, and sportsmanship. Helped kids build self-esteem and learn teamwork in a supportive, non-intimidating setting.'
+      title: 'Youth Engagement',
+      description: "I assisted children during training exercises and helped them follow the coach's instructions."
     },
     {
-      title: 'Intergenerational Inclusion & Mobility',
-      description: 'Assisted older adult participants with tailored warm-ups, modified combinations, and safe conditioning drills to promote mobility, balance, and heart health without fear of injury.'
+      title: 'Beginner Guidance',
+      description: 'I explained basic techniques and helped beginners correct their posture and movements.'
     },
     {
-      title: 'Support for Beginners & Safe Onboarding',
-      description: 'Served as the first point of guidance for nervous first-time attendees, patiently teaching stance, footwork, and basic mechanics to build their confidence from day one.'
+      title: 'Intergenerational Inclusion',
+      description: 'I assisted older adults during training activities alongside the head coach.'
     },
     {
-      title: 'Digital & Creative Support for the Community',
-      description: 'Applied technical and visual communication awareness to assist the training group with digital schedules, organizational communication, and creative visual notices for the community.'
+      title: 'Training Organization',
+      description: 'I prepared training equipment, helped organize training groups and assisted the head coach during activities.'
     }
   ],
-  escRelevance: 'Directly aligns with the European Solidarity Corps (ESC) mission: fostering social cohesion, promoting physical health and wellbeing, supporting intergenerational dialogue, and empowering youth through non-formal community engagement.',
+  escRelevance: 'Interested in contributing to youth engagement, community inclusion and sports participation through ESC volunteering.',
   image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1200&auto=format&fit=crop&grayscale=true'
 };
 
@@ -189,17 +185,17 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: 'exp-volunteering-kickboxing',
-    role: 'Assistant Coach & Volunteer Mentor',
-    organization: 'Community Martial Arts Gym',
+    role: 'Kickboxing Practitioner & Volunteer Coaching Assistant',
+    organization: 'Champion Boxing Club',
     type: 'volunteering',
-    period: '1 Year Duration',
-    location: 'Tunis, Tunisia',
-    summary: 'Volunteered for one year assisting a kickboxing coach, supporting children, older adults, and beginners in regular community sessions.',
+    period: 'November 2024 — March 2026',
+    location: 'Ariana, Tunisia',
+    summary: 'Combined personal kickboxing training and volunteer coaching assistance at Champion Boxing Club, attending five sessions per week across both activities.',
     details: [
-      'Assisted the coach with group drills, safety supervision, and technique reinforcement.',
-      'Provided 1-on-1 guidance for beginners to help them overcome anxiety and learn proper posture.',
-      'Adapted training routines for older adults focusing on functional fitness, mobility, and safety.',
-      'Helped cultivate an inclusive, supportive atmosphere emphasizing respect, discipline, and teamwork.'
+      'Assisted the head coach and supported children and older adults during training exercises.',
+      'Explained basic techniques and helped beginners correct posture and movements.',
+      'Prepared equipment and helped organize training groups.',
+      'Five weekly sessions included personal training and volunteering assistance; they were not exclusively volunteer sessions.'
     ]
   },
   {
@@ -241,20 +237,20 @@ export const LANGUAGES: Language[] = [
 
 export const ESC_MOTIVATIONS = [
   {
-    pillar: 'Solidarity in Action',
-    summary: 'Commitment to using both digital creativity and sports mentoring to empower local communities and promote equity.'
+    pillar: 'Youth & Community Inclusion',
+    summary: 'Interested in supporting youth engagement and community activities with participants of different ages and experience levels.'
   },
   {
-    pillar: 'Cross-Cultural Fluency',
-    summary: 'Fluent in Arabic, English, and French, ready to integrate smoothly into diverse European volunteering teams.'
+    pillar: 'Languages & Intercultural Learning',
+    summary: 'Arabic — Native; English — B2; French — B2. Interested in learning alongside people from different cultural backgrounds.'
   },
   {
     pillar: 'Non-Formal Education & Sports',
-    summary: 'Direct experience channeling kickboxing fundamentals to teach discipline, confidence, and mutual respect to youth.'
+    summary: 'Interested in supporting non-formal learning and sports participation, drawing on my experience assisting the head coach and beginners.'
   },
   {
-    pillar: 'Digital & Creative Contribution',
-    summary: 'Ready to support community initiatives with digital literacy, media design, workshop organization, and technical assistance.'
+    pillar: 'Digital & Creative Support',
+    summary: 'Interested in applying my software engineering and digital skills to future community projects and learning to support creative activities within a host team.'
   }
 ];
 
@@ -262,7 +258,7 @@ export const INDUSTRIAL_TICKER_TEXT = [
   'MARWEN JEMAI // JEMI3I',
   'ESPRIT ENGINEERING 5TH YEAR // TWIN',
   'OPEN FOR PFE INTERNSHIP (2026/2027)',
-  'EUROPEAN SOLIDARITY CORPS READY',
+  'INTERESTED IN ESC VOLUNTEERING',
   'WEB TECHNOLOGIES // CREATIVE COMPUTING',
   'SPORTS FOR INCLUSION // COMMUNITY SOLIDARITY'
 ];
