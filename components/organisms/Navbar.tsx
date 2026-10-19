@@ -6,10 +6,12 @@ import Text from '../atoms/Text';
 import { NAVIGATION_LINKS, PROFILE } from '../../constants';
 import useNavigationDrawer from '../../hooks/useNavigationDrawer';
 import { getNavigationCurrent } from '../../utils/navigation';
+import useHomeLinkClick from '../../hooks/useHomeLinkClick';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const handleHomeClick = useHomeLinkClick();
 
   const closeMenu = useCallback(() => setMobileMenuOpen(false), []);
   const { dialogRef, drawerRef, toggleRef, homeRef } = useNavigationDrawer(mobileMenuOpen, closeMenu);
@@ -27,7 +29,7 @@ const Navbar: React.FC = () => {
     >
       <header className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-8 flex justify-between items-center bg-gradient-to-b from-brand-black/90 via-brand-black/70 to-transparent backdrop-blur-[2px]">
         <div data-drawer-background className="flex items-center space-x-10 md:space-x-16">
-          <Link ref={homeRef} to="/" aria-current={location.pathname === '/' ? 'page' : undefined} className="group block pointer-events-auto" aria-label="Go to JEMI3I home page">
+          <Link ref={homeRef} to="/" onClick={handleHomeClick} aria-current={location.pathname === '/' ? 'page' : undefined} className="group block pointer-events-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-white" aria-label="JEMI3I — Back to homepage">
             <span className="font-display font-black text-2xl md:text-3xl tracking-brutal group-hover:text-brand-red transition-all duration-300 block text-brand-white">
               {PROFILE.brand}
             </span>
