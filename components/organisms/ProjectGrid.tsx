@@ -51,7 +51,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
           {/* Panoramic Immersive Canvas */}
           <Link 
             to={`/project/${p001.id}`} 
-            className="block relative overflow-hidden aspect-[16/9] md:aspect-[21/9] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
+            className="block relative w-full overflow-hidden aspect-[16/9] min-h-[22rem] sm:min-h-0 md:aspect-[21/9] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
             aria-label={`Enter exhibition for ${p001.title}`}
           >
             <img 
@@ -71,15 +71,15 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
               </span>
             </div>
 
-            {/* Hover Action HUD Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            {/* The desktop hover prompt has its own space; the case-study link below stays visible on touchscreens. */}
+            <div className="absolute inset-0 hidden xl:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
               <span className="font-mono text-xs md:text-sm bg-brand-black/95 text-brand-red px-6 py-3 border border-brand-red uppercase tracking-technical shadow-[0_0_20px_rgba(255,0,0,0.4)]">
                 ENTER DIGITAL EXHIBITION →
               </span>
             </div>
 
             {/* Bottom In-Image Typography Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 md:left-10 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 z-10 pointer-events-none">
+            <div className="absolute bottom-6 left-6 right-6 md:left-10 md:right-10 flex flex-col xl:flex-row xl:items-end justify-between gap-4 z-10 pointer-events-none">
               <div>
                 <span className="font-mono text-[10px] text-brand-red font-bold uppercase tracking-widest block mb-1">
                   INTERACTIVE_STORYTELLING // REF_001
@@ -88,7 +88,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
                   {p001.title}
                 </h3>
               </div>
-              <span className="font-mono text-xs text-brand-white/80 border-b border-brand-red pb-1 self-start md:self-end">
+              <span className="font-mono text-xs text-brand-white/80 border-b border-brand-red pb-1 self-start xl:self-end">
                 VIEW FULL ARCHITECTURE SPEC →
               </span>
             </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import Text from '../atoms/Text';
 import { PROFILE, NAVIGATION_LINKS } from '../../constants';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { getNavigationCurrent } from '../../utils/navigation';
 
 const Footer: React.FC = () => {
+  const { pathname } = useLocation();
   return (
     <footer className="bg-brand-black border-t border-white/5 pt-32 pb-12 px-6 md:px-12 relative overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-28">
@@ -40,6 +42,7 @@ const Footer: React.FC = () => {
               <li key={link.name}>
                 <Link 
                   to={link.path} 
+                  aria-current={getNavigationCurrent(pathname, link.path)}
                   className="text-xs font-mono uppercase tracking-widest text-brand-white/50 hover:text-brand-red hover:opacity-100 transition-colors inline-block"
                 >
                   {link.name}_
@@ -77,6 +80,7 @@ const Footer: React.FC = () => {
             <li>
               <Link 
                 to="/contact" 
+                aria-current={pathname === '/contact' ? 'page' : undefined}
                 className="hover:text-brand-red transition-colors block text-[11px]"
               >
                 Contact Dossier_

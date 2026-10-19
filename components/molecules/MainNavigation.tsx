@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAVIGATION_LINKS } from '../../constants';
+import { getNavigationCurrent } from '../../utils/navigation';
 
 const MainNavigation: React.FC = () => {
   const location = useLocation();
@@ -15,6 +16,7 @@ const MainNavigation: React.FC = () => {
           <Link 
             key={item.name} 
             to={item.path} 
+            aria-current={getNavigationCurrent(location.pathname, item.path)}
             className="group relative py-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-red"
           >
             <span className={`font-mono text-[11px] tracking-widest uppercase transition-colors duration-300 ${

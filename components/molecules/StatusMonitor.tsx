@@ -5,7 +5,7 @@ import Text from '../atoms/Text';
 const StatusMonitor: React.FC = () => {
   return (
     <div className="flex items-center space-x-6 md:space-x-8">
-      <div className="hidden lg:flex flex-col items-end border-r border-white/20 pr-6">
+      <div className="hidden xl:flex flex-col items-end border-r border-white/20 pr-6">
         <Text variant="mono" className="text-[9px] text-brand-white/80 font-medium">TUNIS // 36.8065° N</Text>
         <Text variant="mono" className="text-[9px] text-brand-white/80 font-medium">ESPRIT // TWIN 2026/2027</Text>
       </div>

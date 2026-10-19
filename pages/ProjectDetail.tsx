@@ -13,13 +13,13 @@ const ProjectDetail: React.FC = () => {
     return (
       <div className="pt-48 pb-24 px-6 text-center min-h-screen bg-brand-black flex flex-col items-center justify-center">
         <Text variant="mono" className="text-brand-red mb-4">ERROR // 404_NOT_FOUND</Text>
-        <Text variant="hero" className="mb-6 text-5xl">PROJECT NOT LOCATED</Text>
+        <Text as="h1" variant="hero" className="mb-6 text-5xl">PROJECT NOT LOCATED</Text>
         <p className="font-sans text-sm text-brand-white/60 mb-8 max-w-md">
           The requested system specification could not be located in the archive.
         </p>
-        <Link to="/projects">
-          <Button variant="outline">Return to Projects Archive</Button>
-        </Link>
+        <Button to="/projects" variant="outline">
+          Return to Projects Archive
+        </Button>
       </div>
     );
   }
@@ -212,16 +212,16 @@ const ProjectDetail: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="flex-1">
-                <Button fullWidth variant="primary" className="py-4 text-xs font-mono">
+              <span className="flex-1">
+                <Button to="/contact" fullWidth variant="primary" className="py-4 text-xs font-mono">
                   Discuss This Project for PFE →
                 </Button>
-              </Link>
-              <a href={`mailto:${PROFILE.email}?subject=Inquiry regarding Project ${project.projectNumber}: ${project.title}`} className="flex-1">
-                <Button fullWidth variant="outline" className="py-4 text-xs font-mono">
+              </span>
+              <span className="flex-1">
+                <Button href={`mailto:${PROFILE.email}?subject=Inquiry regarding Project ${project.projectNumber}: ${project.title}`} fullWidth variant="outline" className="py-4 text-xs font-mono">
                   Direct Email Inquiry
                 </Button>
-              </a>
+              </span>
             </div>
           </div>
         </div>

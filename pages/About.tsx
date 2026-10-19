@@ -3,7 +3,6 @@ import Text from '../components/atoms/Text';
 import Button from '../components/atoms/Button';
 import Image from '../components/atoms/Image';
 import { PROFILE, LANGUAGES, EXPERIENCES } from '../constants';
-import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   return (
@@ -17,7 +16,7 @@ const About: React.FC = () => {
           </Text>
         </div>
 
-        <Text variant="hero" className="text-5xl md:text-8xl mb-12 uppercase leading-none font-display">
+        <Text as="h1" variant="hero" className="text-5xl md:text-8xl mb-12 uppercase leading-none font-display">
           ENGINEER. <br />
           <span className="text-brand-red italic">CREATOR. CITIZEN.</span>
         </Text>
@@ -41,16 +40,12 @@ const About: React.FC = () => {
             </div>
 
             <div className="pt-6 flex flex-wrap gap-4">
-              <Link to="/contact">
-                <Button variant="primary">
-                  Inquire for PFE Internship →
-                </Button>
-              </Link>
-              <Link to="/volunteering">
-                <Button variant="outline">
-                  View Volunteering Record
-                </Button>
-              </Link>
+              <Button to="/contact" variant="primary">
+                Inquire for PFE Internship →
+              </Button>
+              <Button to="/volunteering" variant="outline">
+                View Volunteering Record
+              </Button>
             </div>
           </div>
 

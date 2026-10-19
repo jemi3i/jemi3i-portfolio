@@ -1,7 +1,6 @@
 import React from 'react';
 import Text from '../atoms/Text';
 import Button from '../atoms/Button';
-import { Link } from 'react-router-dom';
 
 const ManifestoGroup: React.FC = () => {
   return (
@@ -11,16 +10,12 @@ const ManifestoGroup: React.FC = () => {
         "Code is the architecture; human empathy is the compass. Whether building distributed web platforms or coaching beginners on the mat, persistence and precision define the craft."
       </Text>
       <div className="flex flex-wrap gap-4">
-        <Link to="/about">
-          <Button variant="outline" className="px-6 py-3 text-[10px] border-white/20 hover:border-brand-red hover:text-brand-red">
-            DISCOVER_PROFILE →
-          </Button>
-        </Link>
-        <Link to="/contact">
-          <Button variant="ghost" className="text-[10px] italic pb-1">
-            OPEN_TRANSMISSION_
-          </Button>
-        </Link>
+        <Button to="/about" variant="outline" className="px-6 py-3 text-[10px] border-white/20 hover:border-brand-red hover:text-brand-red">
+          DISCOVER_PROFILE →
+        </Button>
+        <Button to="/contact" variant="ghost" className="text-[10px] italic pb-1">
+          OPEN_TRANSMISSION_
+        </Button>
       </div>
     </div>
   );

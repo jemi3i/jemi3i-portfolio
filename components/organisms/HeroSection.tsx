@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import GlitchText from '../atoms/GlitchText';
 import Text from '../atoms/Text';
 import { PROFILE } from '../../constants';
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 interface HeroSectionProps {
   onSelectTrack?: (track: 'engineering' | 'volunteering') => void;
@@ -10,14 +11,21 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
   const [scrollY, setScrollY] = useState(0);
+  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (reducedMotion) {
+      setScrollY(0);
+      return;
+    }
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [reducedMotion]);
 
   // Parallax calculations (bounded to prevent text colliding into fixed navigation)
   const scale = 1 + scrollY * 0.00012;
@@ -33,7 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
       <div 
         className="absolute inset-0 z-0 will-change-transform motion-reduce:transform-none pointer-events-none select-none"
         style={{ 
-          transform: `scale(${scale}) translateY(${bgTranslate}px)`,
+          transform: reducedMotion ? undefined : `scale(${scale}) translateY(${bgTranslate}px)`,
         }}
       >
         <img 
@@ -50,7 +58,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
       {/* Main Hero Stacking Context */}
       <div 
         className="relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-between flex-grow will-change-transform motion-reduce:transform-none"
-        style={{ transform: `translateY(${textTranslate}px)` }}
+        style={{ transform: reducedMotion ? undefined : `translateY(${textTranslate}px)` }}
       >
         {/* 1. Identity & Telemetry Bar — Clear clearance below fixed navbar */}
         <div className="mb-6 sm:mb-8 md:mb-10">
@@ -92,9 +100,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
             </GlitchText>
           </div>
 
-          {/* Line 3: Asymmetric Lockup with Editorial Manifesto on Large Screens */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-12 pt-1">
-            <div className="overflow-visible">
+          {/* Keep the headline intact; the split composition needs desktop width. */}
+          <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 xl:gap-12 pt-1">
+            <div className="overflow-visible shrink-0 whitespace-nowrap">
               <GlitchText 
                 as="div"
                 className="text-[clamp(2.75rem,11.5vw,9.5rem)] text-white tracking-brutal leading-[0.85] font-black uppercase"
@@ -104,7 +112,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onSelectTrack }) => {
             </div>
 
             {/* Editorial Subheadline Beside "I CONNECT." */}
-            <div className="lg:max-w-md border-l-2 border-brand-red pl-5 sm:pl-6 py-1.5 self-start lg:self-end lg:mb-2">
+            <div className="xl:max-w-md border-l-2 border-brand-red pl-5 sm:pl-6 py-1.5 self-start xl:self-end xl:mb-2">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
                 <span className="font-mono text-brand-red text-[10px] font-bold tracking-widest uppercase">
